@@ -1,7 +1,7 @@
 <h1>Office Network Project</h1>
 
 <h2>Description</h2>
-Project consists of a Packet tracer simulation where I create a network for a small business that has (3) departments where they can talk to each other and share information and resources as well well as having access to the internet each with their own assign IP for future network security implementation.
+Designed a small office network using VLAN segmentation and router-on-a-stick to enable inter-VLAN routing while maintaining departmental separation.
 <br />
 
 
