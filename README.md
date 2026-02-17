@@ -9,31 +9,29 @@ The network uses **VLANs** for logical separation and **router-on-a-stick** to e
 
 ## 🖧 Network Topology
 
-### Logical Topology (ASCII Diagram)
-
-
-### Visual Topology
-> *(Created in Cisco Packet Tracer)*
-
-![Network Topology](project1-topology.png)
-
----
+### Logical Topology
+```text
+           Router
+           Switch
+| PCs | ── | PCs | ── | PCs | 
+ (IT)      (Sales)    (Guest)
+```
 
 ## 🗺️ VLAN & IP Addressing Scheme
 
 ### VLAN Design
 | VLAN ID | Name  | Subnet |
 |--------|-------|--------|
-| 10 | HR | 192.168.10.0/24 |
+| 10 |  IT  | 192.168.10.0/24 |
 | 20 | SALES | 192.168.20.0/24 |
-| 30 | IT | 192.168.30.0/24 |
+| 30 | Guest | 192.168.30.0/24 |
 
 ### Default Gateways
 | VLAN | Gateway |
 |----|---------|
-| HR | 192.168.10.1 |
+| IT | 192.168.10.1 |
 | SALES | 192.168.20.1 |
-| IT | 192.168.30.1 |
+| GUEST | 192.168.30.1 |
 
 ---
 
