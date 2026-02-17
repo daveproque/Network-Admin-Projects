@@ -16,6 +16,9 @@ The network uses **VLANs** for logical separation and **router-on-a-stick** to e
 | PCs | ── | PCs | ── | PCs | 
  (IT)      (Sales)    (Guest)
 ```
+### Visual Topology
+> *(Created in Cisco Packet Tracer)*
+![Network Topology](https://github.com/daveproque/Project-1-Packet-Tracer-/blob/main/Project%201%20CCNA%202026.pkt)
 
 ## 🗺️ VLAN & IP Addressing Scheme
 
