@@ -1,61 +1,83 @@
-<h1>Office Network Project</h1>
+# Project 1 – Small Office Network with VLANs & Inter-VLAN Routing (Packet Tracer)
 
-<h2>Description</h2>
-Designed a small office network using VLAN segmentation and router-on-a-stick to enable inter-VLAN routing while maintaining departmental separation.
-<br />
+## 📌 Overview
+This project simulates a small office network with multiple departments that require network segmentation while maintaining controlled communication between them.
+
+The network uses **VLANs** for logical separation and **router-on-a-stick** to enable **inter-VLAN routing**. This project demonstrates **foundational CCNA networking skills** including switching, IP addressing, and basic routing.
+
+---
+
+## 🖧 Network Topology
+
+### Logical Topology (ASCII Diagram)
 
 
-<h2>Languages and Utilities Used</h2>
+### Visual Topology
+> *(Created in Cisco Packet Tracer)*
 
-- <b>Cisco Packet Tracer</b> 
-  
+![Network Topology](project1-topology.png)
 
-<h2>Environments Used </h2>
+---
 
-- <b>Windows 11</b> 
+## 🗺️ VLAN & IP Addressing Scheme
 
-<h2>Program walk-through:</h2>
+### VLAN Design
+| VLAN ID | Name  | Subnet |
+|--------|-------|--------|
+| 10 | HR | 192.168.10.0/24 |
+| 20 | SALES | 192.168.20.0/24 |
+| 30 | IT | 192.168.30.0/24 |
 
-<p align="center">
-Launch Cisco Packet Tracer and Draw the desire network Topology and connect all your devices<br/>
-<img src="https://i.imgur.com/Uncz9Gy.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Create and name Vlans, configure each Vlan for proper access & configure trunk to Router:  <br/>
-<img src="https://i.imgur.com/wfOh2uP.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Create subinterfaces and enable interface: <br/>
-<img src="https://i.imgur.com/cVyGuyL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-DHCP Exclusion & DHCP Pool with path to Router:  <br/>
-<img src="https://i.imgur.com/AqKZVDF.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-Test connection between Vlans using ping  <br/>
-<img src="https://i.imgur.com/Ku3IUOn.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-List of Vlans:  <br/>
-<img src="https://i.imgur.com/rToxShW.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-IP Routes:  <br/>
-<img src="https://i.imgur.com/8XEyNGD.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-<br />
-DHCP Pool List:  <br/>
-<img src="https://i.imgur.com/91InMWa.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-<br />
-</p>
+### Default Gateways
+| VLAN | Gateway |
+|----|---------|
+| HR | 192.168.10.1 |
+| SALES | 192.168.20.1 |
+| IT | 192.168.30.1 |
 
-<!--
- ```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
---!>
+---
+
+## ⚙️ Technologies Implemented
+
+### 🔹 VLANs
+- Logical separation of departments
+- Improved security and traffic management
+
+### 🔹 Trunking
+- 802.1Q trunk between switch and router
+- Allows multiple VLANs over a single physical link
+
+### 🔹 Inter-VLAN Routing
+- Router-on-a-stick configuration
+- Subinterfaces used for each VLAN
+
+---
+
+## 🛠️ Configuration Summary
+
+### Switch Configuration
+- VLAN creation and naming
+- Access port assignment per department
+- Trunk port configuration to router
+
+### Router Configuration
+- Subinterfaces for each VLAN
+- 802.1Q encapsulation
+- Default gateway functionality for all VLANs
+
+---
+
+## ✅ Verification & Testing
+
+The following tests were successfully performed:
+
+- Devices within the same VLAN can communicate
+- Devices in different VLANs can communicate via router
+- Default gateways reachable from all hosts
+
+### Verification Commands
+```plaintext
+show vlan brief
+show interfaces trunk
+show ip route
+ping
